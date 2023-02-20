@@ -44,7 +44,7 @@ namespace Dte.Reference.Data.Api.Client.Console
             }
             catch (HttpServiceException ex)
             {
-                System.Console.WriteLine($"HttpServiceException ({ex.ServiceName}): " + ex.Message + " : " + string.Join(", ", ex.Errors));
+                System.Console.WriteLine($"HttpServiceException ({ex.ServiceName}): " + ex.Message + " : " + string.Join(", ", ex));
             }
             catch (HttpRequestException ex)
             {
