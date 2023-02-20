@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RepositoryUrl>https://github.com/nihr-interoperability-platform/dte-common-lambda</RepositoryUrl>
+    <RootNamespace>Dte.Reference.Data.Api.Client</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dte.Common" Version="0.0.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Requests" />
+  </ItemGroup>
+
+</Project>
