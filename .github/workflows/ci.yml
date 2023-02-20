@@ -19,7 +19,7 @@ jobs:
           dotnet-version: 3.1.200
 
       - name: Add Nuget Source
-        run: dotnet nuget add source --username ${{ secrets.NUGET_DTE_USERNAME }} --password ${{ secrets.NUGET_DTE_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/nihr-interoperability-platform/index.json"
+        run: dotnet nuget add source --username ${{ secrets.NUGET_PACKAGE_USERNAME }} --password ${{ secrets.NUGET_PACKAGE_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/pa-nihr-crn/index.json"
 
       - name: Install dependencies
         run: dotnet restore
@@ -38,4 +38,4 @@ jobs:
         run: dotnet pack ./src/Dte.Reference.Data.Api.Client --configuration Release --output . --include-source -p:PackageVersion=${{ steps.version.outputs.version-without-v }}
       
       - name: Dotnet Nuget push
-        run: dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_DTE_TOKEN }} --source https://nuget.pkg.github.com/nihr-interoperability-platform/index.json
+        run: dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_PACKAGE_TOKEN }} --source https://nuget.pkg.github.com/pa-nihr-crn/index.json
